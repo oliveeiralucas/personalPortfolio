@@ -39,7 +39,7 @@ body{
     display: flex;
     z-index: 100;
     align-items: center;
-    background-color: red;
+    background-color: transparent;
 }
 
 .logo{
@@ -113,6 +113,7 @@ section.home{
    color: var(--main-color);
    margin: 2.5rem 1.5rem 3rem 0;
    transition: .5s ease;
+   margin-bottom: 3.7rem;
 }
 
 .contentHomePage .socialIcons a:hover{
@@ -137,4 +138,87 @@ section.home{
     background-color: var(--white-color);
     color: var(--main-color);
     border: 2px solid var(--main-color);
+}
+
+.imageProfissional{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 768px;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.imageProfissionalBox{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 768px;
+    height: 100vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Profissional{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--main-color);
+    transform: rotate(calc(360deg / 4 * var(--i)));
+    transform-origin: 384px;
+    left: 0;
+    background: var(--bg-color);
+    padding: 10px 0;
+}
+
+.Profissional:nth-child(1) i{
+    margin-right: 15px;
+}
+
+.Profissional:nth-child(1),
+.Profissional:nth-child(4){
+    padding-bottom: 20px;
+}
+
+.Profissional i{
+    font-size: 3.8rem;
+
+}
+
+.Profissional h3{
+    font-size: 3.2rem;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.imageProfissionalBox .circle{
+    width: 560px;
+    height: 560px;
+    border: 3px solid var(--main-color);
+    border-radius: 50%;
+}
+
+.imageProfissional .overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 384px solid var(--main-color);
+    border-left: 384px solid transparent;
+    border-right: 384px solid var(--main-color);
+    border-bottom: 384px solid var(--main-color);
+}
+
+.homeImg img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    transform: translateY(-30%) translateX(20%);
 }
