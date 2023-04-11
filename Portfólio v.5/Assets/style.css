@@ -273,4 +273,10 @@ section.home{
     margin: 2rem 0 3rem;
 }
 
-
+.services .servicesContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
