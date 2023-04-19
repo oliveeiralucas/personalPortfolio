@@ -24,6 +24,15 @@ function changeBackground() {
 
 botaoDarkMode.addEventListener('click', changeBackground);
 
+/*================ menu icon navbar ==============*/
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.header nav');
+
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle('bx-x');
+  navbar.classList.toggle('active');
+  navbar.style.transition = "all 0.5s ease";
+}
 
 /*================ scroll sections ==============*/
 let sections = document.querySelectorAll('section');
@@ -49,6 +58,10 @@ window.onscroll = () => {
   /*================ sticky navbar ==============*/
   let header = document.querySelector('header');
   header.classList.toggle('sticky', window.scrollY > 100);
+
+  /*================ remove menu icon navbar ==============*/
+  menuIcon.classList.remove('bx-x');
+  navbar.classList.remove('active');
 };
 
 
@@ -67,3 +80,19 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+/*================ EMAIL ================= */
+function sendEmail(){
+  Email.send({
+    SecureToken : "a2f7ef7b-e234-4f75-9754-ca31ca10a6ff",
+    To : document.getElementById("email").value,
+    From : "lucas.oliveira@edu.unifil.br",
+    Subject : document.getElementById("subject").value,
+    Body : "Name: " +  document.getElementById("name").value 
+           + "<br> Email: " + document.getElementById("email").value 
+           + "<br> Phone no: " + document.getElementById("phone").value 
+           + "<br> Message: " + document.getElementById("message").value
+  }).then(
+    message => alert(message)
+);
+}
